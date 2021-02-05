@@ -37,7 +37,7 @@ class ApiService extends Component {
   }
 
   addProduct(product) {
-    return axios.post("" + PRODUCT_API_BASE_URL, product, {
+    return axios.post("" + PRODUCT_API_BASE_URL + "/add", product, {
       headers: {
         Authorization: "Bearer " + localStorage.getItem("token"),
       },
@@ -46,7 +46,7 @@ class ApiService extends Component {
 
   editProduct(product, id) {
     console.log(id);
-    return axios.put(PRODUCT_API_BASE_URL + "/" + id, product, {
+    return axios.put(PRODUCT_API_BASE_URL + "/edit/" + id, product, {
       headers: {
         Authorization: "Bearer " + localStorage.getItem("token"),
       },
